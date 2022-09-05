@@ -1,2 +1,2 @@
-#!/bin/bashn
-"Hello, World"
+#!/bin/bash
+'Hello, World'
