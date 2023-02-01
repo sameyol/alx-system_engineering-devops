@@ -1,32 +1,30 @@
-# Advanced API
+# API Advanced
+In this project I will be making advanced API calls to Reddit API using python3 scripts.
+At the end of this project I will be able to:
+- Read API documentation to find the endpoints you’re looking for
+- Use an API with pagination
+- To parse JSON results from an API
+- Make a recursive API call
+- Sort a dictionary by value
+## Files:
+* **0. How many subs?**
+[0-subs.py](./0-subs.py): Script that queries the [Reddit API](https://www.reddit.com/dev/api/) and returns the number of subscribers for a given subreddit.
 
-![](https://nordicapis.com/wp-content/uploads/How-API-Security-Has-Advanced-With-The-Dawn-of-AI-1024x576.png)
+* **1. Top Ten**
+[1-top_ten.py](./1-top_ten.py): Script that queries the [Reddit API](https://www.reddit.com/dev/api/) and prints the titles of the first 10 hot posts listed for a given subreddit.
 
-> A great API to use for some practice is the Reddit API. There’s a lot of endpoints available, many that don’t require any form of authentication, and there’s tons of information to be parsed out and presented. Getting comfortable with API calls now can save you some face during technical interviews and even outside of the job market, you might find personal use cases to make your life a little bit easier.
+* **2. Recurse it!**
+[2-recurse.py](./2-recurse.py): Script that recursively queries the [Reddit API](https://www.reddit.com/dev/api/) and returns a list containing the titles of all hot articles for a given subreddit.
 
-## Learning Objectives
+* **3. Count it!**
+[100-count.py](./100-count.py): Script that recursively queries the [Reddit API](https://www.reddit.com/dev/api/) parses the tile of all hot articles, and prints a sorted count of given keywords..
 
-- How to read API documentation to find the endpoints you’re looking for
-- How to use an API with pagination
-- How to parse JSON results from an API
-- How to make a recursive API call
-- How to sort a dictionary by value
+**Test files for:**
+* [0-subs.py](./tests/0-main.py)
+* [1-top_ten.py](./tests/1-main.py)
+* [2-recurse.py](./tests/2-main.py)
+* [100-count.py](./tests/100-main.py)
 
-## Resources
-
-- [Reddit API Documentation](https://www.reddit.com/dev/api/)
-- [Query String](https://en.wikipedia.org/wiki/Query_string)
-
-## Project Requirements
-
-- Allowed editors: `vi`, `vim`, `emacs`
-- All your files will be interpreted/compiled on `Ubuntu 14.04 LTS` using `python3 (version 3.4.3)`
-- All your files should end with a new line
-- The first line of all your files should be exactly `#!/usr/bin/python3`
-- Libraries imported in your Python files must be organized in alphabetical order
-- A `README.md` file, at the root of the folder of the project, is mandatory
-- Your code should use the __PEP 8 style__
-- All your __files must be executable__
-- The length of your files will be tested using `wc`
-- All your modules should have a documentation `(python3 -c 'print(__import__("my_module").__doc__)')`
-- You must use the Requests module for sending HTTP requests to the Reddit API
+## Example usage
+$ python3 0-main.py programming
+756024

@@ -1,46 +1,33 @@
-# Configuration management
+# Configuration Management
 
-![configuration_management](https://wac-cdn.atlassian.com/dam/jcr:f4635478-48a1-45d1-9b2f-43d14b2666ba/Configuration-management-tools-2x.png?cdnVersion=690)
+* Server configuration management is a solution for turning your infrastructure into a codebase, describing all processes necessary for deploying a server in a set of provisioning scripts that can be versioned and easily reused.
 
-> Configuration management is a systems engineering process for establishing consistency of a product’s attributes throughout its life.
+## Writing Puppet Manifests
+* Puppet is a popular configuration management tool capable of managing complex infrastructure in a transparent way, using a master server to orchestrate the configuration of the nodes.
 
-Puppet is a tool that helps you manage and automate the configuration of servers. When you use Puppet, you define the desired state of the systems in your infrastructure that you want to manage.
+* In this project I will Puppet manifests that must pass *puppet-lint* version 2.1.1 without any errors.
 
-![puppet](https://miro.medium.com/max/720/1*j0RHN3oXzOfXWl7XeLzxZw.webp)
+* The first line of my Puppet Manifest will be a comment explaining what the Puppet manifest is about.(i.e. # Install package).
 
-Obviously writing Puppet code for your infrastructure requires an investment of time and energy, but in the long term, it is for sure a must-have.
+In this project I will be writing Puppet Manifests.
 
-## Project Requirements
+## Tasks
 
-- All your files will be interpreted on `Ubuntu 20.04 LTS`
-- All your files should end with a new line
-- A __README.md__ file at the root of the folder of the project is mandatory
-- Your Puppet manifests must pass `puppet-lint version 2.1.1` without any errors
-- Your Puppet manifests must run without error
-- Your Puppet manifests first line __must be a comment__ explaining what the Puppet manifest is about
-- Your Puppet manifests files must end with the extension __.pp__
+* **0. Create a file**
+[0-create_a_file.pp](./0-create_a_file.pp): Puppet manifest that creates a file in */temp*.
+### Requirements:
+* File path is */tmp/school*
+* File permission is *0744*
+* File owner is *www-data*
+* File group is *www-date*
+* File contains *I love Puppet*
 
-## Installing puppet and puppet-lint on ubuntu
+* **1. Install a package**
+[1-install_a_package.pp](./1-install_a_package.pp): Puppet manifest to install:
+* puppet-lint
+* Version 2.5.0
 
-### A video says it all
-__Watch the video below to get a full grasp about tackling the project__
-
-_Click the play video to watch video_ [Play video](https://youtu.be/YJyzEnXSsc8)
-
-### Commands on Terminal
-```bash
-
-$ apt-get update && upgrade -y
-
-$ sudo apt-get install -y ruby=1:2.7+1 --allow-downgrades
-
-$ sudo apt-get install -y ruby-augeas
-
-$ sudo apt-get install -y ruby-shadow
-
-$ sudo apt-get install -y puppet
-
-#installs puppet linter
-$ gem install puppet-lint
-```
-__Follow the above instructions to install puppet and puppet-linter then watch the video to enable you understand how to get started with the task__
+* **2. Execute a command**
+[2-execute_A_command](./2-execute_a_command): Puppet manifest that kills a process name killmenow.
+* using the exec Puppet resource
+* using pkill command

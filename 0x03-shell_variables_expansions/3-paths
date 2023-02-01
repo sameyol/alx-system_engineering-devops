@@ -1,2 +1,2 @@
 #!/bin/bash
-echo $PATH| ls | wc
+find . -maxdepth 1 -mindepth 1 -type d | wc -l 

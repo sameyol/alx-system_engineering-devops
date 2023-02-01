@@ -1,59 +1,18 @@
-# 0x0E Web stack debugging #1 :wrench:
+# Wed stack debugging #1
+Debugging usually takes a big chunk of a software enginner's time. The art of debugging is tough and it takes years, even decades to master, and that is why seasoned software engineers are the best at it...experience. They have seen lots of broken code, buggy systems, weird edge cases and race conditions.
 
-> Debugging is the process of finding and fixing errors in software that prevents it from running correctly. As you become a more advanced programmer and an industry engineer, you will learn how to use debugging tools such as gdb or built-in tools that IDEs have. However, it’s important to understand the concepts and processes of debugging manually. This project covers a second part of the optimal framework and blueprint for debugging web stack (remote containers this scenario) bugs
+In this project I will be debugging a nginx server running in a docker container.
+## Test and verify your assumptions
+The idea is to ask a set of questions until you find the issue. For example, if you installed a web server and it isn't serving a page when browing the IP. here are some questions you can ask youself to start debugging:
+- Is the web server starte?
+- On what port should it listen?
+- Is it actually listening on this port? run - *netstat -lpdn*
+- It is listening on the correct server IP? - *netstat* is also your friend here
+- Is the firewall enabled?
+- Have you looked at logs? usually in */var/log* and *tail -f* is your friend
+- Can I connect to the HTTP port from the location I am browsing from? *curl* is your friend.
 
-Challenge:
-
-Using your debugging skills, find out what’s keeping your Ubuntu container’s Nginx installation from listening on port 80. Feel free to install whatever tool you need, start and destroy as many containers as you need to debug the issue.
-
-## A Video to explain it all
-__Watch the video to see how i was able to come up with the solutions to the task.__
-
-__Click the "watch video" to play video__ [__watch video__](https://youtu.be/Fx6ewkKQdU0)
-
-## Tasks :heavy_check_mark:
-
-0. Bash script with the minimum number of commands to automate your fix.
-1. Bash script with the minimum number of commands to automate your fix. v2
-
-
-## Results :chart_with_upwards_trend:
-
-| Filename |
-| ------ |
-| [0-nginx_likes_port_80](./0-nginx_likes_port_80)|
-| [1-debugging_made_short](./1-debugging_made_short)|
-
-## Additional info :construction:
-
-- Allowed editors: `vi`, `vim`, `emacs`
-- All your files will be interpreted on `Ubuntu 20.04 LTS`
-- All your files should end with a new line
-- A __README.md file__ at the root of the folder of the project is mandatory
-- All your __Bash script files must be executable__
-- Your Bash __scripts must pass Shellcheck__ without any error
-- Your Bash scripts must run without error
-- The first line of all your Bash scripts should be exactly `#!/usr/bin/env bash`
-- The second line of all your Bash scripts should be a comment explaining what is the script doing
-- You are not allowed to use `wget`
-
-### Resources
-
-- BASH
-- Debian 9 stable / Ubuntu 16.04 / Ubuntu 18.04 
-- Shellcheck
-- Docker
-- Webstack debugging
-- Networking Basics
-
-### Try It On Your Machine :computer:
-
-```bash
-git clone https://github.com/sammykingx/alx-system_engineering-devops.git
-cd 0x0E-web_stack_debugging_1
-cat FILENAME
-curl 0:80
-cat -e FILENAME | wc -l
-curl 0:80
-```
-_Watch the video "[watch now](https://youtu.be/Fx6ewkKQdU0) to see how i did mine"_
+## Task
+* **0. Nginx likes port 80**
+[0-nginx_likes_port_80](./0-nginx_likes_port_80): Bash Script that configures a server according to requirements.
+Using debugging skills, find out what's keeping your Ubuntu container's Nginx installation from listening on port 80.

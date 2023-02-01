@@ -1,2 +1,1 @@
-# About Folder
-This folder contains BASH Scripts for making aliases, creating variables, BASH calculations, etc.
+*Read me file* _explain what each script does__
